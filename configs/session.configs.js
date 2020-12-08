@@ -1,4 +1,6 @@
 const session = require("express-session");
+const MongoStore = require("connect-mongo")(session);
+const mongoose = require("mongoose");
 
 module.exports = (app) => {
   app.use(
@@ -7,6 +9,11 @@ module.exports = (app) => {
       resave: false,
       saveUninitialized: true,
       cookie: { maxAge: 60000 },
+      // connect-mongo
+      store: new MongoStore({
+        mongooseConnection: mongoose.connection,
+        ttl: 60 * 60 * 24, // 60sec * 60min * 24h => 1 day
+      }),
     })
   );
 };

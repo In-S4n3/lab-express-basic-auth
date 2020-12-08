@@ -1,11 +1,49 @@
-body {
+html, body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  height: 100%;
+  margin: 0;
 }
 
 a {
   color: #00B7FF;
 }
 
+h1 {
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+p {
+  text-align: center;
+}
+
 img {
   display: block;
+}
+
+.logoutButton {
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.form-signup-login {
+  text-align: center;
+  padding: 0px 200px;
+}
+
+.wrapper {
+  min-height: 100%;
+
+  /* Equal to height of footer */
+  /* But also accounting for potential margin-bottom of last child */
+  margin-bottom: -50px;
+}
+.footer,
+.push {
+  height: 50px;
+}
+
+footer {
+  background-color: black;
 }

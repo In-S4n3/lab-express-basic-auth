@@ -54,7 +54,7 @@ router.post("/login", (req, res, next) => {
     .then((userFromDB) => {
       console.log(userFromDB);
       if (!userFromDB) {
-        res.render("/login", {
+        res.render("auth/login", {
           errorMessage: `This user doens't yet exists!!`,
         });
         return;
@@ -81,6 +81,11 @@ router.get("/private", (req, res, next) => {
 
 router.get("/main", (req, res, next) => {
   res.render("privateRoutes/main", { userInSession: req.session.currentUser });
+});
+
+router.post("/logout", (req, res, next) => {
+  req.session.destroy();
+  res.redirect("/");
 });
 
 module.exports = router;
