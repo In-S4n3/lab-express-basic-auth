@@ -1,0 +1,11 @@
+{{#if userInSession}}
+<h1>Private page</h1>
+
+<p>Hello {{userInSession.username}}</p>
+
+<img src="https://media.giphy.com/media/l4RezYonrpcXcRr0m7/giphy.gif" alt="">
+
+<a href="/main">Check the band</a>
+{{else}}
+<h2>Sorry mate, you are not logged in!</h2>
+{{/if}}
